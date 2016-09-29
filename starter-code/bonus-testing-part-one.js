@@ -22,11 +22,9 @@ function expect(expression, failureMessage, successMessage) {
 }
 
 /* Below is an example of our test in action.
-TODO: Run this file in node
-    to see what happens when the test fails, then change `ricksFaveAnimal`
-    to get the test to pass!
+TODO: Run this file in node to see what happens when the test fails, then change `ricksFaveAnimal` to get the test to pass!
 */
-var ricksFaveAnimal = 'hyena';
+var ricksFaveAnimal = 'penguin';
 
 expect(
   ricksFaveAnimal === 'penguin',
@@ -50,6 +48,8 @@ var nextAnimal;
       Assign one of your favorite animals dynamically by chance to the
       nextAnimal variable   :-)
       Your code begins on the next line: */
+var animalIndex = Math.floor(Math.random() * 4);
+var nextAnimal = favoriteAnimals[animalIndex];
 
   /* TODO:
       Write a test! Use the `expect()` function we defined earlier to ensure
@@ -58,3 +58,7 @@ var nextAnimal;
       just 'penguin').
       Remember to: pass in your expression, and write a failure and a success
       message. Your test begins on the next line: */
+expect(
+  (favoriteAnimals.indexOf(nextAnimal) !== -1),
+  'nextAnimal should have a value, but currently equals ' + nextAnimal,
+  'nextAnimal has a value and that value is ' + nextAnimal + '!');
